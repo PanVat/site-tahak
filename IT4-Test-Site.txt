@@ -4,7 +4,7 @@ Switch(config)# interface range fa0/1-3
 Switch(config-if-range)# channel-group 1 mode active
 
 Switch(config)# interface port-channel 1
-Switch(config-if)# switchport mode trunk
+Switch(config-if)# switchport mode access
 
  - příkazy se nastavují stejně na obou switchích
  - na rozhraní port-channel se nastaví trunk
@@ -64,7 +64,7 @@ Router0(config-ext-nacl)# permit tcp 192.168.10.0 0.0.1.255 host 192.168.14.2 eq
 
  - pravidla pro VLAN 100 (Centrála) a pro VLAN 200 (Ostrava) - PING + HTTPS
  - nastavujeme na hraničním routeru
- - jako host uvedeme deafault-gateway DMZ serveru
+ - jako host uvedeme IP DMZ serveru
  - u vlan 200 jen změníme adresu sítě, jinak stejné
 
 Router0(config-ext-nacl)# permit icmp 192.168.12.0 0.0.0.255 host 192.168.14.2
